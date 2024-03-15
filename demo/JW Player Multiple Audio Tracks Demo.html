@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JW Player Multiple Audio Tracks Demo</title>
+    <!-- Thêm thư viện JW Player -->
+    <script src="path/to/your/jwplayer.js"></script>
+    <script>jwplayer.key = "YOUR_JWPLAYER_LICENSE_KEY";</script>
+</head>
+<body>
+    <!-- Container để hiển thị JW Player -->
+    <div id="myVideoPlayer">Loading the player...</div>
+
+    <script>
+        jwplayer("myVideoPlayer").setup({
+            playlist: [{
+                image: "path/to/your/video-thumbnail.jpg",
+                sources: [{
+                    file: "path/to/your/video.mp4",
+                }],
+                tracks: [
+                    { 
+                        file: "path/to/your/english-audio-track.mp3",
+                        label: "English",
+                        kind: "audio",
+                        "default": true
+                    },
+                    { 
+                        file: "path/to/your/spanish-audio-track.mp3",
+                        label: "Spanish",
+                        kind: "audio"
+                    },
+                    { 
+                        file: "path/to/your/french-audio-track.mp3",
+                        label: "French",
+                        kind: "audio"
+                    }
+                ]
+            }],
+            height: 360,
+            width: 640,
+            autostart: false
+        });
+    </script>
+</body>
+</html>
